@@ -1,17 +1,27 @@
-from state import init_state
-from agent import run_agent
+from graph import build_graph
 
 def main():
-    state = init_state()
+    graph = build_graph()
 
-    print("AutoStream Agent Ready!")
+    state = {
+        "messages": [],
+        "intent": None,
+        "name": None,
+        "email": None,
+        "platform": None,
+        "response": None
+    }
+
+    print("AutoStream LangGraph Agent Ready!")
 
     while True:
         user_input = input("You: ")
 
-        state, response = run_agent(state, user_input)
+        state["messages"].append(user_input)
 
-        print("Agent:", response)
+        state = graph.invoke(state)
+
+        print("Agent:", state["response"])
 
 
 if __name__ == "__main__":
