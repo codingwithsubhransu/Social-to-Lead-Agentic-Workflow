@@ -2,3 +2,4 @@ google-generativeai
 langchain
 langgraph
 faiss-cpu
+python-dotenv

@@ -69,10 +69,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 
 ```powershell
 pip install -r requirements.txt
-pip install python-dotenv
 ```
-
-Note: `python-dotenv` is required by `config_gemini.py` and should be installed.
 
 ### 4. Configure environment variables
 
